@@ -20,14 +20,13 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 
 ### 📋 Jira Backlog
 
-![Backlog Jira](./docs/Captura%20de%20tela%202026-03-11%20135329.png)
+![Backlog Jira](./docs/Captura%20de%20tela%202026-03-11%20135620.png)
 
 ---
 
 ### 📋 Jira Board
 
-![Sprint Jira](./docs/Captura%20de%20tela%202026-03-11%20135620.png)
-
+![Sprint Jira](./docs/Captura%20de%20tela%202026-03-11%20135329.png)
 </details>
 
 ---
