@@ -7,7 +7,7 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 ## Processos
 
 <details>
-<summary>📷 Entrega 1</summary>
+<summary>📦 Entrega 1</summary>
 
 <br>
 
