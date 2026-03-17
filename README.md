@@ -31,7 +31,7 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 
 ### 🎨 Protótipo Figma
 
-![Protótipo Figma](./docs/images/Figma%20E1%20Veredictum.png)
+![Protótipo Figma](./docs/imagens/Figma%20E1%20Veredictum.png)
 
 <br/>
 
