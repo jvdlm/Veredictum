@@ -38,8 +38,7 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 ### 🎥 Screencast do Protótipo
 
 🔗 **Assista ao vídeo do protótipo:**  
-[Ver Screencast no YouTube](COLE_AQUI_O_LINK_DO_VIDEO)
-
+[Ver Screencast no YouTube]( https://www.youtube.com/watch?v=p-y8VyPhJIk)
 </details>
 
 <details>
