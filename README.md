@@ -15,6 +15,8 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 
 [BDD Veredictum](./docs/BDD%20VEREDICTUM.md)
 
+<br/>
+
 ### 📄 Jira Backlog
 
 ![Backlog Jira](./docs/imagens/backlogJira.jpeg)
@@ -27,7 +29,16 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 
 <br/>
 
-### 🎨 Figma
+### 🎨 Protótipo Figma
+
+![Protótipo Figma](./docs/images/Figma%20E1%20Veredictum.png)
+
+<br/>
+
+### 🎥 Screencast do Protótipo
+
+🔗 **Assista ao vídeo do protótipo:**  
+[Ver Screencast no YouTube](COLE_AQUI_O_LINK_DO_VIDEO)
 
 </details>
 
