@@ -63,7 +63,7 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 
 ### 📋 Jira Backlog - Sprint 02
 
-![Backlog Sprint 2]([./docs/imagens/Sprint-2.png))
+![Backlog Sprint 2]([./docs/imagens/Sprint-2.png)
 
 <br/>
 
