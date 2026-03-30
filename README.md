@@ -45,7 +45,39 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 <summary>📦 Entrega 2</summary>
 
 <br>
-Em desenvolvimento.
+<br>
+
+### 🚀 Deploy da Aplicação
+
+🔗 **Acesse o sistema em produção:**  
+[Veredictum Online](COLE_AQUI_O_LINK_DO_DEPLOY)
+
+<br/>
+
+### 🎥 Screencast do Sistema
+
+🔗 **Assista ao vídeo demonstrando o funcionamento do sistema (com deploy):**  
+[Ver Screencast no YouTube](COLE_AQUI_O_LINK_DO_VIDEO)
+
+<br/>
+
+### 📋 Jira Backlog - Sprint 02
+
+![Backlog Sprint 2](./docs/imagens/backlogSprint2.jpeg)
+
+<br/>
+
+### 📋 Jira Board - Sprint 02
+
+![Board Sprint 2](./docs/imagens/boardSprint2.jpeg)
+
+<br/>
+
+### 🐛 Issue Tracker (GitHub)
+
+- [Issue #1 - Cadastro de Processos Jurídicos](LINK_DA_ISSUE_1)
+- [Issue #2 - Gerenciamento de Clientes](LINK_DA_ISSUE_2)
+- [Issue #3 - Exibição de Relatórios](LINK_DA_ISSUE_3)
 
 </details>
 
