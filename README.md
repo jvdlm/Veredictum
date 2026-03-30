@@ -69,7 +69,7 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 
 ### 📋 Jira Board - Sprint 02
 
-![Board Sprint 2](./docs/imagens/boardSprint2.jpeg)
+![Board Sprint 2](./docs/imagens/Jira_Board2.png)
 
 <br/>
 
