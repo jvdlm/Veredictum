@@ -52,7 +52,7 @@ A proposta é reunir, em uma única plataforma, ferramentas que simplifiquem o a
 ### 🚀 Deploy da Aplicação
 
 🔗 **Acesse o sistema em produção:**
-
+  (https://veredictum.onrender.com/)
 <br/>
 
 ### 🎥 Screencast do Sistema
