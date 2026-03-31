@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import os
+import dj_database_url
 
 from dotenv import load_dotenv
 
@@ -71,26 +72,30 @@ if NOT_PROD:
 else:
     SECRET_KEY = os.environ["SECRET_KEY"]
     DEBUG = os.getenv("DEBUG", "0").lower() in ("true", "t", "1")
-    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split()
+
+    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", ".onrender.com").split()
+
     CSRF_TRUSTED_ORIGINS = [
-        o for o in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split() if o
+        origin
+        for origin in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split()
+        if origin
     ]
+
     SECURE_SSL_REDIRECT = os.getenv("SECURE_SSL_REDIRECT", "0").lower() in (
         "true",
         "t",
         "1",
     )
+
     if SECURE_SSL_REDIRECT:
         SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.environ["DBNAME"],
-            "HOST": os.environ["DBHOST"],
-            "USER": os.environ["DBUSER"],
-            "PASSWORD": os.environ["DBPASS"],
-            "OPTIONS": {"sslmode": "require"},
-        }
+        "default": dj_database_url.config(
+            default=os.environ.get("DATABASE_URL"),
+            conn_max_age=600,
+            ssl_require=True,
+        )
     }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -106,9 +111,9 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "/static/"
-STATICFILES_DIRS = (str(BASE_DIR / "templates/static"),)
-STATIC_ROOT = str(BASE_DIR / "static")
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+STATICFILES_DIRS = [BASE_DIR / "templates" / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
