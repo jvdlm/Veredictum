@@ -118,3 +118,7 @@ Em desenvolvimento.
 **Luis Felipe Furlaneto** — [GitHub](https://github.com/luisfflima)
 
 ![Luis Felipe](./docs/imagens/luisFelipe.jpeg)
+
+---
+
+**Eduardo Henrique De Sá** - [GitHub](https://github.com/EduardoHenrique15)
