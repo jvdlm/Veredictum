@@ -58,7 +58,7 @@ A proposta é reunir, em uma única plataforma, ferramentas que simplifiquem o a
 ### 🎥 Screencast do Sistema
 
 🔗 **Assista ao vídeo demonstrando o funcionamento do sistema (com deploy):**
-
+()
 <br/>
 
 ### 📋 Jira Backlog - Sprint 02
