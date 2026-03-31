@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'processes/css/register_process.css' %}">
+{% endblock 'head' %}
+
+{% block 'body' %}
+{% include "partials/navbar.html" %}
+<header class="client_register-header">
+    <h1>Editar cliente</h1>
+    <p>Atualize os dados do cliente.</p>
+</header>
+
+<div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            <section class="alert {{ message.tags }}">{{ message }}</section>
+        {% endfor %}
+    {% endif %}
+    <form method="POST" class="form-container">
+        {% csrf_token %}
+        <input type="text" name="name" value="{{ client.name }}" placeholder="Nome" required>
+        <input type="text" name="number" value="{{ client.number }}" placeholder="Telefone" required>
+        <input type="date" name="birthdate" value="{{ client.birthdate|date:'Y-m-d' }}" required>
+        <input type="text" name="document_id" value="{{ client.document_id }}" placeholder="CPF ou CNPJ" required>
+        <input type="text" name="zip_code" value="{{ client.zip_code }}" placeholder="CEP" required>
+        <input type="text" name="adress" value="{{ client.adress }}" placeholder="Logradouro" required>
+        <select name="state" required>
+            <option value="" disabled>Selecione o estado (UF)</option>
+            {% for uf in ufs %}
+                <option value="{{ uf.0 }}" {% if uf.0 == client.state %}selected{% endif %}>{{ uf.1 }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="city" value="{{ client.city }}" placeholder="Cidade" required>
+        <input type="text" name="neighborhood" value="{{ client.neighborhood }}" placeholder="Bairro" required>
+        <input type="text" name="role" value="{{ client.role }}" placeholder="Cargo" required>
+
+        <button class="submit-button" type="submit">Salvar</button>
+    </form>
+</div>
+{% endblock 'body' %}

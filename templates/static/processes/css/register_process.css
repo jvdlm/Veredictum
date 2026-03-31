@@ -1,0 +1,162 @@
+.process_register-header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.process_register-header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.process_register-header p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.form-container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espaço entre os elementos */
+
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-container input,
+.form-container select {
+  flex: 1 1 30%; /* Permite que os inputs ocupem 30% do container */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  min-width: 200px; /* Define uma largura mínima para os inputs */
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.form-container .submit-button {
+  background-color: black;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 95%; /* Quase 100% do formulário */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Adiciona sombras */
+  margin: 10px auto; /* Centraliza o botão */
+  display: block; /* Garante que o botão ocupe a largura definida */
+}
+
+.form-container .submit-button:hover {
+  background-color: #333; /* Cor de fundo ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Estilos específicos para campos de valor monetário */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+/* Estilos para mensagens de alerta */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.input-row input,
+.input-row select {
+  width: 32%; /* Cada input ocupará 32% da largura da linha */
+  margin-right: 5px; /* Espaçamento entre os inputs */
+}
+
+.input-row input:last-child,
+.input-row select:last-child {
+  margin-right: 0; /* Remove o espaçamento do último input da linha */
+}
+
+
+@media screen and (max-width: 600px) {
+  .form-container input,
+  .form-container select {
+    flex: 1 1 100%; /* Em telas menores, os inputs ocupam toda a largura */
+    margin-bottom: 10px;
+  }
+}

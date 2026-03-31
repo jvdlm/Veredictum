@@ -1,8 +1,10 @@
 # ⚖ Veredictum
 
-**Veredictum** é um projeto acadêmico de inovação e tecnologia idealizado por estudantes da **CESAR School** com o propósito de transformar a rotina jurídica por meio de um sistema inteligente de gestão para escritórios de advocacia.
-A proposta do projeto é reunir, em uma única plataforma, ferramentas que simplifiquem o acompanhamento de processos, a organização de informações e a execução de tarefas recorrentes do dia a dia jurídico. Mais do que digitalizar fluxos, o Veredictum busca tornar a operação mais fluida, estratégica e eficiente.
+**Veredictum** é um projeto acadêmico de inovação e tecnologia idealizado por estudantes da **CESAR School**, com o propósito de transformar a rotina jurídica por meio de um sistema de gestão para escritórios de advocacia.
 
+A proposta é reunir, em uma única plataforma, ferramentas que simplifiquem o acompanhamento de processos, a organização de informações e a execução de tarefas recorrentes do dia a dia jurídico.
+
+---
 
 ## Processos
 
@@ -37,7 +39,7 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 
 ### 🎥 Screencast do Protótipo
 
-🔗 **Assista ao vídeo do protótipo:**  
+🔗 **Assista ao vídeo do protótipo:**
 [Ver Screencast no YouTube]( https://www.youtube.com/watch?v=p-y8VyPhJIk)
 </details>
 
@@ -49,15 +51,13 @@ A proposta do projeto é reunir, em uma única plataforma, ferramentas que simpl
 
 ### 🚀 Deploy da Aplicação
 
-🔗 **Acesse o sistema em produção:**  
-[Veredictum Online](COLE_AQUI_O_LINK_DO_DEPLOY)
+🔗 **Acesse o sistema em produção:**
 
 <br/>
 
 ### 🎥 Screencast do Sistema
 
-🔗 **Assista ao vídeo demonstrando o funcionamento do sistema (com deploy):**  
-[Ver Screencast no YouTube](COLE_AQUI_O_LINK_DO_VIDEO)
+🔗 **Assista ao vídeo demonstrando o funcionamento do sistema (com deploy):**
 
 <br/>
 
@@ -98,6 +98,8 @@ Em desenvolvimento.
 Em desenvolvimento.
 
 </details>
+
+---
 
 ## Equipe
 

@@ -1,0 +1,15 @@
+{% load static %}
+<header class="navbar-header">
+    <nav class="navbar-nav">
+        <ul>
+            <li><a href="{% url 'app' %}">Início</a></li>
+            <li class="processes"><a href="{% url 'processes' %}">Processos</a></li>
+            <li class="cliente"><a href="{% url 'clients_home' %}">Clientes</a></li>
+            <li><a href="{% url 'process_reports' %}">Relatórios</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="user-icon">
+        <span>&#128100;</span>
+    </div>
+</header>

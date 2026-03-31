@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'processes/css/register_process.css' %}">
+{% endblock 'head' %}
+
+{% block 'body' %}
+{% include "partials/navbar.html" %}
+<header class="process_register-header">
+    <h1>Processos</h1>
+    <p>Cadastre processos jurídicos e vincule ao cliente.</p>
+</header>
+
+<div class="container">
+    {% if messages %}
+        {% for message in messages %}
+          <section class="alert {{ message.tags }}">{{ message }}</section>
+        {% endfor %}
+    {% endif %}
+    <form method="POST" class="form-container">{% csrf_token %}
+        <input type="text" name="tipo" placeholder="Tipo" required>
+        <input type="text" name="titulo" placeholder="Título" required>
+        <input type="text" name="tipo_acao" placeholder="Tipo de ação / assunto" required>
+
+        <select name="cliente_id" required id="cliente_id">
+            <option value="" disabled selected>Cliente</option>
+            {% for client in clients %}
+                <option value="{{ client.id }}">{{ client.name }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="text" name="contrario" placeholder="Contrário" required>
+        <input type="text" name="numero_pasta" placeholder="Número da pasta" required>
+        <input type="text" name="numero_cnj" placeholder="Número (CNJ)" required>
+        <input type="text" name="detalhes_pasta" placeholder="Detalhes da pasta" required>
+        <input type="text" name="advogado" placeholder="Advogado" required>
+        <input type="text" name="push_andamentos" placeholder="Push andamentos" required>
+        <input type="text" name="comarca" placeholder="Comarca" required>
+        <input type="text" name="juiz" placeholder="Juiz" required>
+
+        <select name="risco" required>
+            <option value="" disabled selected>Selecione o risco</option>
+            {% for risco in riscos %}
+                <option value="{{ risco.0 }}">{{ risco.1 }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="status" required>
+            <option value="" disabled selected>Status do processo</option>
+            {% for st in statuses %}
+                <option value="{{ st.0 }}">{{ st.1 }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="text" name="tribunal" placeholder="Tribunal / órgão" required>
+
+        <select name="uf" required>
+            <option value="" disabled selected>Selecione o estado (UF)</option>
+            {% for uf in ufs %}
+                <option value="{{ uf.0 }}">{{ uf.1 }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="instancia" required>
+            <option value="" disabled selected>Selecione a instância</option>
+            {% for instancia in instacias %}
+                <option value="{{ instancia.0 }}">{{ instancia.1 }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="text" name="vara" placeholder="Vara / turma" required>
+
+        <input type="number" name="valor_causa" placeholder="R$ causa" step="0.01" min="0" required>
+        <input type="number" name="valor_possivel" placeholder="R$ possível" step="0.01" min="0" required>
+        <input type="number" name="valor_provisionado" placeholder="R$ provisionado" step="0.01" min="0" required>
+        <button class="submit-button" type="submit">Salvar</button>
+    </form>
+
+</div>
+
+{% endblock 'body' %}

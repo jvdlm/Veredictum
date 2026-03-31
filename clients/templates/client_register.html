@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'processes/css/register_process.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
+{% endblock 'head' %}
+
+{% block 'body' %}
+{% include "partials/navbar.html" %}
+{% if messages %}
+        {% for message in messages %}
+          <section class="alert {{ message.tags }}">{{ message }}</section>
+        {% endfor %}
+    {% endif %}
+<header class="process_register-header">
+    <h1>Clientes</h1>
+    <p>Cadastre e gerencie os clientes do escritório.</p>
+</header>
+
+<form action="{% url 'clients_register' %}" method="POST" class="form-container">{% csrf_token %}
+  <input type="text" name="name" placeholder="Nome" required id="name">
+  <input type="tel" name="number" placeholder="Telefone" required id="cell">
+  <input type="date" name="birthdate" placeholder="Data de nascimento" required id="birthdate">
+  <input type="text" name="document_id" placeholder="CPF ou CNPJ" required title="CPF ou CNPJ" id="cpf">
+  <input type="text" name="zip_code" placeholder="CEP" required title="CEP" id="cep">
+  <input type="text" name="adress" placeholder="Logradouro" required id="adress">
+  <select name="states" required id="states">
+      <option value="" disabled selected>Selecione o estado (UF)</option>
+      {% for uf in ufs %}
+          <option value="{{ uf.0 }}">{{ uf.1 }}</option>
+      {% endfor %}
+  </select>
+  <input type="text" name="city" placeholder="Cidade" required id="city">
+  <input type="text" name="neighborhood" placeholder="Bairro" required id="neighborhood">
+  <input type="text" name="role" placeholder="Cargo / papel" required id="role">
+
+  <button type="submit" class="submit-button">Salvar</button>
+</form>
+
+{% endblock 'body' %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'processes/css/process.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
+{% endblock 'head' %}
+
+{% block 'body' %}
+{% include "partials/navbar.html" %}
+
+{% if messages %}
+    {% for message in messages %}
+        <section class="alert {{ message.tags }}">{{ message }}</section>
+    {% endfor %}
+{% endif %}
+
+<header class="process-header">
+    <h1>Relatórios de processos</h1>
+    <p>Visualização geral e filtro por status.</p>
+</header>
+
+<div class="container">
+    <form method="get" class="form-container" style="margin-bottom: 1.5rem;">
+        <label for="status">Filtrar por status</label>
+        <select name="status" id="status" onchange="this.form.submit()">
+            <option value="">Todos</option>
+            {% for value, label in status_choices %}
+                <option value="{{ value }}" {% if status_filter == value %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+        <noscript>
+            <button type="submit" class="submit-button">Aplicar</button>
+        </noscript>
+    </form>
+
+    {% if not has_any_processes %}
+        <p class="alert alert-info">Não há processos cadastrados. Cadastre processos para ver o relatório.</p>
+    {% elif not processes %}
+        <p class="alert alert-info">Nenhum processo encontrado para o filtro selecionado.</p>
+    {% else %}
+        <h2>Resumo</h2>
+        <table class="process-table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Número (CNJ)</th>
+                    <th>Cliente</th>
+                    <th>Status</th>
+                    <th>Comarca</th>
+                    <th>Risco</th>
+                    <th>Valor da causa</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for process in processes %}
+                <tr>
+                    <td>{{ process.titulo }}</td>
+                    <td>{{ process.numero_cnj }}</td>
+                    <td>{{ process.cliente.name }}</td>
+                    <td>{{ process.get_status_display }}</td>
+                    <td>{{ process.comarca }}</td>
+                    <td>{{ process.get_risco_display }}</td>
+                    <td>R$ {{ process.valor_causa }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+{% endblock 'body' %}
