@@ -120,11 +120,11 @@ Testes end-to-end implementados com Selenium.
 <br/>
 
 ### 📋 Jira Backlog - Sprint 02
-![Backlog Sprint 3](./docs/imagens/Jira Backlog sp3.png)
+![Backlog Sprint 3](./docs/imagens/Jira_Backlog3.png)
 <br/>
 
 ### 📋 Jira Board - Sprint 03
-![Board Sprint 3](./docs/imagens/Jira Board sp3.png)
+![Board Sprint 3](./docs/imagens/Jira_Board3.png)
 
 <br/>
 
