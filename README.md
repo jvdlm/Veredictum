@@ -129,7 +129,12 @@ Testes end-to-end implementados com Selenium.
 <br/>
 
 ### 👥 Programação em Pares
-[🔗 ADICIONAR RELATO ATUALIZADO]
+👥 Programação em Pares — Sprint 03
+Durante a Sprint 03, a equipe adotou a prática de programação em pares de forma remota, utilizando o Discord com compartilhamento de tela.
+Par 1 — Miguel Arcanjo + Luis Felipe Furlaneto
+Responsáveis pela implementação das duas histórias da sprint. Miguel conduziu a codificação enquanto Luis acompanhava, revisava e sugeria melhorias em tempo real. Juntos implementaram a funcionalidade de Arquivar Processos (DEV-13), adicionando a view, rota e botão de arquivamento na listagem, e a Filtragem Avançada de Processos (DEV-16), com filtros por status, risco, UF e busca por título. O par também foi responsável pela escrita e execução dos testes automatizados e pela configuração do pipeline de CI/CD no GitHub Actions.
+Par 2 — Juliana Linden + Eduardo Henrique
+Responsáveis pela documentação, gestão e registro visual do projeto. Juliana conduziu as atualizações do README com a estrutura da Entrega 03, enquanto Eduardo organizou o quadro da Sprint 03 no JIRA, atualizou o status das histórias, registrou as issues no GitHub e ficou responsável pela gravação e edição dos screencasts da entrega, documentando o funcionamento das novas histórias, o pipeline de CI/CD e a execução dos testes automatizados.
 
 </details>
 
