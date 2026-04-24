@@ -14,10 +14,36 @@ from .models import Process
 def process(request):
     if not request.user.is_authenticated:
         return redirect(reverse("login"))
+
+    qs = Process.objects.select_related("cliente").all()
+
+    status_filter = request.GET.get("status") or ""
+    risco_filter = request.GET.get("risco") or ""
+    uf_filter = request.GET.get("uf") or ""
+    busca = request.GET.get("busca") or ""
+
+    if status_filter:
+        qs = qs.filter(status=status_filter)
+    if risco_filter:
+        qs = qs.filter(risco=risco_filter)
+    if uf_filter:
+        qs = qs.filter(uf=uf_filter)
+    if busca:
+        qs = qs.filter(titulo__icontains=busca)
+
     return render(
         request,
         "processes.html",
-        {"processes": Process.objects.select_related("cliente").all()},
+        {
+            "processes": qs,
+            "status_filter": status_filter,
+            "risco_filter": risco_filter,
+            "uf_filter": uf_filter,
+            "busca": busca,
+            "status_choices": Process.STATUS_CHOICES,
+            "risco_choices": Process.RISCO_CHOICES,
+            "uf_choices": Process.UF_CHOICES,
+        },
     )
 
 
@@ -342,3 +368,13 @@ def process_reports(request):
             "has_any_processes": has_any,
         },
     )
+
+def archive_process(request, process_id):
+    if not request.user.is_authenticated:
+        return redirect(reverse("login"))
+
+    proc = get_object_or_404(Process, id=process_id)
+    proc.status = "arquivado"
+    proc.save()
+    messages.add_message(request, constants.SUCCESS, "Processo arquivado com sucesso!")
+    return redirect(reverse("processes"))

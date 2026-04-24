@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'processes/css/process.css' %}">
 <link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
 {% endblock 'head' %}
-
 {% block 'body' %}
 {% include 'partials/navbar.html' %}
-    {% if messages %}
-        {% for message in messages %}
-          <section class="alert {{ message.tags }}">{{ message }}</section>
-        {% endfor %}
-    {% endif %}
+
+{% if messages %}
+    {% for message in messages %}
+      <section class="alert {{ message.tags }}">{{ message }}</section>
+    {% endfor %}
+{% endif %}
+
 <header class="process-header">
     <h1>Processos</h1>
     <p>Lista de processos cadastrados.</p>
@@ -20,6 +20,37 @@
 
 <div class="container">
     <h2>Processos</h2>
+
+    <!-- Filtros DEV-16 -->
+    <form method="GET" action="" style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px;">
+        <input type="text" name="busca" placeholder="Buscar por título..." value="{{ busca }}"
+               style="padding:8px; border-radius:6px; border:1px solid #ccc; flex:1; min-width:180px;">
+
+        <select name="status" style="padding:8px; border-radius:6px; border:1px solid #ccc;">
+            <option value="">Todos os status</option>
+            {% for value, label in status_choices %}
+                <option value="{{ value }}" {% if status_filter == value %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="risco" style="padding:8px; border-radius:6px; border:1px solid #ccc;">
+            <option value="">Todos os riscos</option>
+            {% for value, label in risco_choices %}
+                <option value="{{ value }}" {% if risco_filter == value %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="uf" style="padding:8px; border-radius:6px; border:1px solid #ccc;">
+            <option value="">Todos os estados</option>
+            {% for value, label in uf_choices %}
+                <option value="{{ value }}" {% if uf_filter == value %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="submit-button" style="padding:8px 16px;">Filtrar</button>
+        <a href="{% url 'processes' %}"><button type="button" class="submit-button" style="padding:8px 16px; background:#888;">Limpar</button></a>
+    </form>
+
     <table>
         <thead>
             <tr>
@@ -45,7 +76,16 @@
                     <a href="{% url 'process_edit' process.id %}" class="action-link" title="Editar">
                         <button class="submit-button edit-process" type="button">Editar</button>
                     </a>
-                    <a href="{% url 'process_delete' process.id %}" class="action-link" onclick="return confirm('Você tem certeza que deseja excluir este processo?');" title="Excluir">
+                    {% if process.status != 'arquivado' %}
+                    <a href="{% url 'process_archive' process.id %}"
+                       onclick="return confirm('Deseja arquivar este processo?');"
+                       class="action-link" title="Arquivar">
+                        <button class="submit-button" type="button"
+                                style="background:#f0a500;">Arquivar</button>
+                    </a>
+                    {% endif %}
+                    <a href="{% url 'process_delete' process.id %}" class="action-link"
+                       onclick="return confirm('Você tem certeza que deseja excluir este processo?');" title="Excluir">
                         <button class="submit-button delete-process" type="button">Excluir</button>
                     </a>
                 </td>
@@ -57,6 +97,8 @@
             {% endfor %}
         </tbody>
     </table>
-    <a href="{% url 'process_register' %}"><button class="add-process" type="button">Adicionar processo</button></a>
+    <a href="{% url 'process_register' %}">
+        <button class="add-process" type="button">Adicionar processo</button>
+    </a>
 </div>
 {% endblock 'body' %}
