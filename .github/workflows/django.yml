@@ -1,0 +1,40 @@
+name: CI Veredictum
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run migrations
+        env:
+          SECRET_KEY: 'test-secret-key-apenas-para-ci'
+          DEBUG: 'True'
+          DATABASE_URL: ''
+        run: |
+          python manage.py migrate --run-syncdb
+
+      - name: Run tests
+        env:
+          SECRET_KEY: 'test-secret-key-apenas-para-ci'
+          DEBUG: 'True'
+          DATABASE_URL: ''
+        run: |
+          python manage.py test
