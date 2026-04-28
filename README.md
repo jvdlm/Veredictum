@@ -115,7 +115,9 @@ Testes end-to-end implementados com Selenium.
 ### 🐛 Issue Tracker - Sprint 03 (GitHub)
 🔗 [Ver issues abertas](https://github.com/jvdlm/Veredictum/issues)
 
-![Issue Tracker Sprint 3](./docs/imagens/issues_sprint3.png)
+![Issue Tracker Sprint 3](<img width="864" height="768" alt="image" src="https://github.com/user-attachments/assets/a45d3cac-1951-468a-9d92-af95d586c197" />
+ <img width="854" height="630" alt="image" src="https://github.com/user-attachments/assets/58461dbb-f60b-4a02-b2dd-1f463a8812c0" />
+)
 
 <br/>
 
