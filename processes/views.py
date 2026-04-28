@@ -3,6 +3,7 @@ from decimal import Decimal, InvalidOperation
 from django.contrib import messages
 from django.contrib.messages import constants
 from django.db import IntegrityError
+from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 
@@ -20,7 +21,7 @@ def process(request):
     status_filter = request.GET.get("status") or ""
     risco_filter = request.GET.get("risco") or ""
     uf_filter = request.GET.get("uf") or ""
-    busca = request.GET.get("busca") or ""
+    busca = (request.GET.get("busca") or "").strip()
 
     if status_filter:
         qs = qs.filter(status=status_filter)
@@ -29,8 +30,11 @@ def process(request):
     if uf_filter:
         qs = qs.filter(uf=uf_filter)
     if busca:
-        qs = qs.filter(titulo__icontains=busca)
-
+        qs = qs.filter(
+            Q(titulo__icontains=busca)
+            | Q(numero_cnj__icontains=busca)
+            | Q(cliente__name__icontains=busca)
+        )
     return render(
         request,
         "processes.html",
