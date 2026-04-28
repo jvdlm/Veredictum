@@ -108,7 +108,7 @@ A cada push na branch `develop`, o workflow é executado automaticamente.
 Testes end-to-end implementados com Selenium.
 
 🎥 **Screencast da execução dos testes:**
-[🔗 ADICIONAR LINK DO YOUTUBE]()
+[https://www.youtube.com/watch?v=UWixGMQY2iA]()
 
 <br/>
 
