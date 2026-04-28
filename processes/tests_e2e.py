@@ -38,7 +38,6 @@ class VeredictumE2ETest(LiveServerTestCase):
         self.browser.find_element(By.NAME, "password").send_keys("testpass123")
         self.browser.find_element(By.NAME, "password").submit()
 
-        # Login redireciona para a dashboard (name=app); depois acessamos processos.
         wait.until(EC.url_to_be(f"{self.live_server_url}/"))
         self.browser.get(self.live_server_url + "/processes/")
         self.assertIn("/processes", self.browser.current_url)
