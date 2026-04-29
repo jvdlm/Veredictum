@@ -100,7 +100,7 @@ A cada push na branch `develop`, o workflow é executado automaticamente.
 🔗 [Ver pipeline no GitHub Actions](https://github.com/jvdlm/Veredictum/actions)
 
 🎥 **Screencast do processo de build e deploy:**
-[🔗 ADICIONAR LINK DO YOUTUBE]()
+[https://youtu.be/JXigKV4YVtE?si=nzGnneetGjeurnuc]()
 
 <br/>
 
