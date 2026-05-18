@@ -171,3 +171,9 @@ Em desenvolvimento.
 ---
 
 **Eduardo Henrique De Sá** — [GitHub](https://github.com/EduardoHenrique15)
+
+---
+
+**João Pedro Silva Barbosa** — [GitHub](https://github.com/JoaoPedroSSBarbosa)
+
+---
