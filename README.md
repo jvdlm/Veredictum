@@ -100,7 +100,7 @@ A cada push na branch `develop`, o workflow é executado automaticamente.
 🔗 [Ver pipeline no GitHub Actions](https://github.com/jvdlm/Veredictum/actions)
 
 🎥 **Screencast do processo de build e deploy:**
-[https://youtu.be/JXigKV4YVtE?si=nzGnneetGjeurnuc]()
+[https://youtu.be/JXigKV4YVtE?si=nzGnneetGjeurnuc](https://youtu.be/JXigKV4YVtE?si=nzGnneetGjeurnuc)
 
 <br/>
 
@@ -108,7 +108,7 @@ A cada push na branch `develop`, o workflow é executado automaticamente.
 Testes end-to-end implementados com Selenium.
 
 🎥 **Screencast da execução dos testes:**
-[https://www.youtube.com/watch?v=UWixGMQY2iA]()
+[https://www.youtube.com/watch?v=UWixGMQY2iA](https://www.youtube.com/watch?v=UWixGMQY2iA)
 
 <br/>
 
