@@ -89,7 +89,7 @@ A proposta é reunir, em uma única plataforma, ferramentas que simplifiquem o a
 
 ### 🎥 Screencast das Novas Histórias
 🔗 **Assista ao vídeo demonstrando as novas funcionalidades (URL deve aparecer no vídeo):**
-[https://youtu.be/IUYvOVF-7iQ]()
+[🔗https://youtu.be/IUYvOVF-7iQ](https://www.youtube.com/watch?v=IUYvOVF-7iQ)
 
 <br/>
 
