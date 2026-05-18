@@ -176,4 +176,6 @@ Em desenvolvimento.
 
 **João Pedro Silva Barbosa** — [GitHub](https://github.com/JoaoPedroSSBarbosa)
 
+![João Pedro Barbosa](./docs/imagens/joaoPedro.jpg)
+
 ---
